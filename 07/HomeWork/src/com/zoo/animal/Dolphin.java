@@ -1,10 +1,11 @@
 package com.zoo.animal;
 
+
 public class Dolphin extends Animal implements Huntable, Swimable {
 	public static final String ANIMAL_KIND = "Дельфин";
 
-	public Dolphin(String name, char sex) {
-		super(name, sex);
+	public Dolphin(String name) {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 	}
 

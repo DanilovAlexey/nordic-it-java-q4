@@ -1,16 +1,18 @@
 package com.zoo.animal;
 
+import com.zoo.exceptions.NegativeValueException;
+
 public class Frog extends Animal implements Huntable, Jumpable {
 	public static final String ANIMAL_KIND = "Лягушка";
 	private String color;
 
-	public Frog(String name, char sex) {
-		super(name, sex);
+	public Frog(String name) {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 	}
 
-	public Frog(String name, char sex, String color) {
-		super(name, sex);
+	public Frog(String name, String color)  {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 		this.color = color;
 	}
@@ -27,7 +29,10 @@ public class Frog extends Animal implements Huntable, Jumpable {
 		System.out.println("квааааа");
 	}
 
-	public void jump(float meters) {
+	public void jump(float meters) throws NegativeValueException {
+		if (meters < 0)
+			throw new NegativeValueException("Невозможно прыгнуть на отрицательное число метров");
+		
 		System.out.println(ANIMAL_KIND + " прыгнула на " + meters + " метров");
 	}
 

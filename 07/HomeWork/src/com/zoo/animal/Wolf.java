@@ -1,16 +1,17 @@
 package com.zoo.animal;
 
+
 public class Wolf extends Animal implements Biteable, Huntable {
 	public static final String ANIMAL_KIND = "Волк";
 	private boolean isHungry;
 
-	public Wolf(String name, char sex) {
-		super(name, sex);
+	public Wolf(String name) {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 	}
 
-	public Wolf(String name, char sex, boolean isHungry) {
-		super(name, sex);
+	public Wolf(String name, boolean isHungry) {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 		this.isHungry = isHungry;
 	}

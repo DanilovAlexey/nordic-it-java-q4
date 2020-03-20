@@ -2,14 +2,15 @@ package com.zoo.animal;
 
 import java.text.MessageFormat;
 
+import com.zoo.exceptions.InvalidSexValue;
+
 public abstract class Animal {
 	private String kind;
 	private String name;
 	private char sex;
 
-	public Animal(String name, char sex) {
+	public Animal(String name) {
 		this.name = name;
-		this.sex = sex;
 	}
 
 	public String getKind() {
@@ -32,7 +33,9 @@ public abstract class Animal {
 		return sex;
 	}
 
-	public void setSex(char sex) {
+	public void setSex(char sex) throws InvalidSexValue  {
+		if (sex != 'M' && sex != 'F')
+			throw new InvalidSexValue("Недопустимое значение пола. Возможные варианты: ['F', 'M']");
 		this.sex = sex;
 	}
 

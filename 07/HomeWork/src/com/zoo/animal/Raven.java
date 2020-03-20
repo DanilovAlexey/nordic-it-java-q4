@@ -1,16 +1,17 @@
 package com.zoo.animal;
 
+
 public class Raven extends Animal implements Flyable {
 	public static final String ANIMAL_KIND = "Ворон";
 	private Integer size;
 
-	public Raven(String name, char sex) {
-		super(name, sex);
+	public Raven(String name) {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 	}
 
-	public Raven(String name, char sex, Integer size) {
-		super(name, sex);
+	public Raven(String name, Integer size) {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 		this.size = size;
 	}

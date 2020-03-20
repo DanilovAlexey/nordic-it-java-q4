@@ -1,16 +1,17 @@
 package com.zoo.animal;
 
+
 public class Snake extends Animal implements Biteable, Huntable {
 	public static final String ANIMAL_KIND = "Змея";
 	private Integer length;
 
-	public Snake(String name, char sex) {
-		super(name, sex);
+	public Snake(String name) {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 	}
 
-	public Snake(String name, char sex, Integer length) {
-		super(name, sex);
+	public Snake(String name, Integer length) {
+		super(name);
 		this.setKind(ANIMAL_KIND);
 		this.length = length;
 	}
