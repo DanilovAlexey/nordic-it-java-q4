@@ -1,20 +1,38 @@
 package com.zoo.animal;
 
-public class Dolphin extends Animal {
+public class Dolphin extends Animal implements Huntable, Swimable {
+	public static final String ANIMAL_KIND = "Дельфин";
 
-	public Dolphin(String kind) {
-		super(kind);
+	public Dolphin(String name, char sex) {
+		super(name, sex);
+		this.setKind(ANIMAL_KIND);
 	}
 
 	public void say() {
-		System.out.println("уиииуиииуии");
+		System.out.println("уиии-уиии-уии");
 	}
 
-	public void jump() {
-		System.out.println("выпрыгнул из воды");
+	public void dive(int meters) {
+		System.out.println(ANIMAL_KIND + " нырнул в воду на " + meters + " метров.");
 	}
 
-	public void dive() {
-		System.out.println("нырнул в воду");
+	public void jumpFromWater(float meters) {
+		System.out.println(ANIMAL_KIND + " выпрыгнул из воды на " + meters + " метров.");
+
+	}
+
+	public void hunt(String victim) {
+		System.out.println(ANIMAL_KIND + " охотиться на " + victim);
+
+	}
+
+	public void eat(float gramm) {
+		System.out.println(ANIMAL_KIND + " съел " + gramm + " еды.");
+
+	}
+
+	public void sleep() {
+		System.out.println(ANIMAL_KIND + " спит полушариями.");
+
 	}
 }

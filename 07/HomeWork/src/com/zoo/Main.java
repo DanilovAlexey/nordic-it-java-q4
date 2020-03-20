@@ -5,16 +5,38 @@ import com.zoo.animal.*;
 public class Main {
 
 	public static void main(String[] args) {
-		var cat = new Cat("Кот");
-		cat.setName("Стифлер");
-		cat.setSex('M');
+		var cat = new Cat("Стифлер", 'M');
+		cat.setTailLength(25);
+		
+		var raven = new Raven("Андрей", 'M', 35);
+		
+		var dolph = new Dolphin("Степан", 'M');
+
+		var snake = new Snake("Нагайна", 'F', 50);
+
+		var wolf = new Wolf("Антонина Геннадьевна", 'F');
+		wolf.setHungry(true);
+		
+		
+		var frog = new Frog("Лягух", 'M');
+		frog.setColor("зеленый");
+		
+		
+		System.out.println(cat.toString());
+		System.out.println(raven.toString());
+		System.out.println(dolph.toString());
+		System.out.println(snake.toString());
+		System.out.println(wolf.toString());
+		System.out.println(frog.toString());
+		
+		
+		/*
 		System.out.println(cat.toString());
 		cat.say();
-		cat.setTailLength(25);
 		System.out.println("Хвост: " + cat.getTailLength() + " см.");
-
+*/
 		System.out.println("");
-
+/*
 		var raven = new Raven("Ворон");
 		raven.setName("Андрей");
 		raven.setSex('M');
@@ -52,6 +74,17 @@ public class Main {
 		wolf.say();
 		wolf.setHungry(true);
 		System.out.println("Голодный: " + wolf.isHungry());
+		
+		System.out.println("");
+
+		var frog = new Frog("Лягушка");
+		frog.setName("Лягух");
+		frog.setSex('M');
+		System.out.println(frog.toString());
+		frog.say();
+		frog.setColor("зеленый");
+		System.out.println("Цвет: " + frog.getColor());
+		*/
 	}
 
 }

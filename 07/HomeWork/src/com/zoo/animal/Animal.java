@@ -2,13 +2,14 @@ package com.zoo.animal;
 
 import java.text.MessageFormat;
 
-public class Animal {
+public abstract class Animal {
 	private String kind;
 	private String name;
 	private char sex;
 
-	public Animal(String kind) {
-		this.kind = kind;
+	public Animal(String name, char sex) {
+		this.name = name;
+		this.sex = sex;
 	}
 
 	public String getKind() {
@@ -35,10 +36,17 @@ public class Animal {
 		this.sex = sex;
 	}
 
-	public void say() {
-		System.out.println("");
+	public abstract void say();
+	public abstract void sleep();
+	
+	public void eat() {
+		System.out.println(this.getKind() + " поел. ");
 	}
-
+	
+	public void eat(float gramm, String food) {
+		System.out.println(this.getKind() + " поел " + gramm + " " + food);
+	}
+	
 	public String toString() {
 		Object[] params = new Object[] { this.getKind(), this.getName(), this.getSex() };
 		String msg = MessageFormat.format("{0}:(Имя:{1}, Пол:{2})", params);
