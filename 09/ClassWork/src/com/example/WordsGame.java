@@ -53,6 +53,7 @@ public class WordsGame {
 			}
 
 			if (wordNew.isEmpty() || wordNew.isBlank()) {
+				System.out.println("Игрок " + ((cnt % 2 == 0) ? "A" : "B") + " пропускает ход.");
 				cntPass += 1;
 				cnt += 1;
 			}
