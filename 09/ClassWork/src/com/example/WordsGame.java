@@ -34,6 +34,7 @@ public class WordsGame {
 
 		while (cntPass < 2) {
 			player = ((cnt % 2 == 0) ? "A" : "B");
+			playersHistory.putIfAbsent(player, "");
 
 			System.out.println("Ходит игрок " + player + ":");
 			wordNew = scanner.nextLine();
@@ -51,7 +52,6 @@ public class WordsGame {
 			if (!wordNew.isEmpty() || !wordNew.isBlank()) {
 				wordsHistory.add(wordNew);
 
-				playersHistory.putIfAbsent(player, "");
 				var words = playersHistory.get(player);
 				words += wordNew;
 				playersHistory.put(player, words);
@@ -129,7 +129,7 @@ public class WordsGame {
 	public static int finalCountdown(HashMap<String, Integer> scoreTable, String playerHistory) {
 		var result = 0;
 		for (var item : playerHistory.toCharArray()) {
-			result += scoreTable.get(String.valueOf(item).toUpperCase());
+			result += scoreTable.getOrDefault(String.valueOf(item).toUpperCase(), 0);
 		}
 
 		return result;
