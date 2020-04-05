@@ -1,13 +1,13 @@
 package com.example;
 
 public class IntWrapper {
-	private int count;
+	private volatile int count;
 	
-	public void increment() {
+	public synchronized void increment() {
 		count += 1;
 	}
 	
-	public int getCount() {
+	public synchronized int getCount() {
 		return count;
 	}
 }

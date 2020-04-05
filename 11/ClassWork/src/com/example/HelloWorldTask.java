@@ -1,5 +1,10 @@
 package com.example;
 
+
+
+// extends Thread
+// implements Runnable
+
 public class HelloWorldTask implements Runnable {
 
 	private int number;
