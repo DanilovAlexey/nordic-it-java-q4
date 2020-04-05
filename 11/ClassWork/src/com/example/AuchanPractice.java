@@ -4,7 +4,7 @@ import java.util.*;
 
 public class AuchanPractice {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		var clients = Collections.synchronizedList(new ArrayList<Integer>());
 
@@ -27,59 +27,73 @@ public class AuchanPractice {
 				queue4.add(i);
 		}
 
-		for (var item : queue1) {
-			var thread = new Thread() {
 
-				@Override
-				public void run() {
+		
+		var thread1 = new Thread() {
+
+			@Override
+			public void run() {
+				for (var item : queue1) {
 					clients.add(item);
 				}
+			}
 
-			};
-			thread.start();
-		}
+		};
+		
+		var thread2 = new Thread() {
 
-		for (var item : queue2) {
-			var thread = new Thread() {
-
-				@Override
-				public void run() {
+			@Override
+			public void run() {
+				for (var item : queue2) {
 					clients.add(item);
 				}
+			}
 
-			};
-			thread.start();
-		}
+		};
+		
+		
+		var thread3 = new Thread() {
 
-		for (var item : queue3) {
-			var thread = new Thread() {
-
-				@Override
-				public void run() {
+			@Override
+			public void run() {
+				for (var item : queue3) {
 					clients.add(item);
 				}
+			}
 
-			};
-			thread.start();
-		}
+		};
+		
+		
+		var thread4 = new Thread() {
 
-		for (var item : queue4) {
-			var thread = new Thread() {
-
-				@Override
-				public void run() {
+			@Override
+			public void run() {
+				for (var item : queue4) {
 					clients.add(item);
 				}
+			}
 
-			};
-			thread.start();
-		}
+		};
+		
+		
+		thread1.start();
+		thread2.start();
+		thread3.start();
+		thread4.start();
+		
 
+		
+		thread1.join();
+		thread2.join();
+		thread3.join();
+		thread4.join();
+		
+		
 		for (int i = 1; i <= 2000; i++) {
 			if (!clients.contains(i))
 				System.out.println(i);
 		}
-
+		
 		System.out.println("=====");
 		System.out.println(clients.size());
 
