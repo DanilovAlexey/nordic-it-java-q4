@@ -75,9 +75,7 @@ public class AuchanPractice {
 			thread.start();
 		}
 
-		for (
-
-				int i = 1; i <= 2000; i++) {
+		for (int i = 1; i <= 2000; i++) {
 			if (!clients.contains(i))
 				System.out.println(i);
 		}
