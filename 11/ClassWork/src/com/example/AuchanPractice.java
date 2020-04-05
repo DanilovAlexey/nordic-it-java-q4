@@ -7,7 +7,6 @@ public class AuchanPractice {
 	public static void main(String[] args) {
 
 		var clients = Collections.synchronizedList(new ArrayList<Integer>());
-		
 
 		var queue1 = new ArrayList<Integer>();
 		var queue2 = new ArrayList<Integer>();
@@ -28,64 +27,64 @@ public class AuchanPractice {
 				queue4.add(i);
 		}
 
-		
-		for (int i = 0; i < 500; i++) {
-			var k = i;
-			
-			var thread1 = new Thread() {
+		for (var item : queue1) {
+			var thread = new Thread() {
 
 				@Override
 				public void run() {
-					clients.add(queue1.get(k));
+					clients.add(item);
 				}
 
 			};
-			
-			var thread2 = new Thread() {
-
-				@Override
-				public void run() {
-					clients.add(queue2.get(k));
-				}
-
-			};
-			
-			
-			var thread3 = new Thread() {
-
-				@Override
-				public void run() {
-					clients.add(queue3.get(k));
-				}
-
-			};
-			
-			
-			var thread4 = new Thread() {
-
-				@Override
-				public void run() {
-					clients.add(queue4.get(k));
-				}
-
-			};
-			
-			
-			thread1.start();
-			thread2.start();
-			thread3.start();
-			thread4.start();
+			thread.start();
 		}
-		
-	
-		
-		System.out.println(clients.size());
-		System.out.println("=====");
-		
-		for (int i = 1; i <= 2000; i++) {
+
+		for (var item : queue2) {
+			var thread = new Thread() {
+
+				@Override
+				public void run() {
+					clients.add(item);
+				}
+
+			};
+			thread.start();
+		}
+
+		for (var item : queue3) {
+			var thread = new Thread() {
+
+				@Override
+				public void run() {
+					clients.add(item);
+				}
+
+			};
+			thread.start();
+		}
+
+		for (var item : queue4) {
+			var thread = new Thread() {
+
+				@Override
+				public void run() {
+					clients.add(item);
+				}
+
+			};
+			thread.start();
+		}
+
+		for (
+
+				int i = 1; i <= 2000; i++) {
 			if (!clients.contains(i))
 				System.out.println(i);
 		}
+
+		System.out.println("=====");
+		System.out.println(clients.size());
+
 	}
 
 }
