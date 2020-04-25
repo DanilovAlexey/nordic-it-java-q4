@@ -1,4 +1,4 @@
-package shop;
+package com.example.shop;
 
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
