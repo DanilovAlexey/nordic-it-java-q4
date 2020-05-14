@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.parking.model.Parking;
@@ -21,7 +22,7 @@ class ParkingController {
 	@Autowired
 	Parking parking;
 
-	@GetMapping(path = "/free", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/free")
 	public ResponseEntity<Object> getFree() {
 
 		var response = new HashMap<String, Object>();
