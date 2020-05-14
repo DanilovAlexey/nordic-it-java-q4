@@ -38,7 +38,7 @@ class ParkingController {
 		if (parking.getFreePlaces().isEmpty()) {
 			response.put("message", "No free place");
 		} else {
-			response.put("data", parking.getFreePlaces().isEmpty() ? -1 : parking.setPlaceReserved());
+			response.put("data", parking.setPlaceReserved());
 			response.put("message", "Your place number");
 		}
 
