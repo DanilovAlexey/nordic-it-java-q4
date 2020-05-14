@@ -18,7 +18,7 @@ public class Parking {
 	public Parking() {
 		parking = new HashMap<Integer, Boolean>();
 
-		for (var i = 1; i <= 4; i++) {
+		for (var i = 1; i <= 20; i++) {
 			parking.put(i, false);
 		}
 
