@@ -30,16 +30,13 @@ public class Task23Application {
 			}
 		}
 		arr.add(counter);
-
-		arr.sort(new Comparator<Integer>() {
-
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				return 0;
-			}
-
-		});
-
+		/*
+		 * arr.sort(new Comparator<Integer>() {
+		 * 
+		 * @Override public int compare(Integer o1, Integer o2) { return 0; }
+		 * 
+		 * });
+		 */
 		arr.sort((a, b) -> Integer.compare(a, b));
 
 		return arr.get(arr.size() - 1);
